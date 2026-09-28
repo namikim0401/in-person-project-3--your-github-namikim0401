@@ -5,11 +5,11 @@
 const portfolio = {
     // Personal information object
     owner: {
-        name: "Your Name Here",        // TODO: Add your name
-        title: "Your Title Here",      // TODO: Add your professional title
-        email: "your.email@example.com", // TODO: Add your email
-        location: "Your City, State",  // TODO: Add your location
-        bio: "Write a brief description about yourself here. What are you passionate about? What are your goals?" // TODO: Add your bio
+        name: "Nami Kim",        // TODO: Add your name
+        title: "UX Engineer",
+        email: "naomikim0401@gmail.com", // TODO: Add your email
+        location: "Berkeley, California",
+        bio: "I build " // TODO: Add your bio
     },
     
     // Skills as an array
@@ -62,6 +62,17 @@ console.log("Full portfolio object:", portfolio);
 // console.log("Second project:", portfolio.projects[1]);
 // console.log("Available for freelance?", portfolio.availability.freelance);
 
-// TODO: Students will create summary strings using template literals
-// let summary = `${portfolio.owner.name} is a ${portfolio.owner.title} with ${portfolio.skills.length} skills.`;
-// console.log("Summary:", summary);
+// Phase 4.1: Summarize the portfolio and find featured projects.
+console.log("Portfolio Summary:");
+console.log(`${portfolio.owner.name} has ${portfolio.skills.length} skills`);
+console.log(`and ${portfolio.projects.length} projects`);
+
+for (let i = 0; i < portfolio.projects.length; i++) {
+    if (portfolio.projects[i].featured === true) {
+        console.log("⭐ Featured:", portfolio.projects[i].title);
+    }
+}
+
+// Phase 4.2: Convert the portfolio to formatted JSON for debugging.
+let dataAsJSON = JSON.stringify(portfolio, null, 2);
+console.log("Portfolio as JSON:", dataAsJSON);
